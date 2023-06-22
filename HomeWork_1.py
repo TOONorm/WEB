@@ -1,5 +1,4 @@
 
-
 def func(st):
     if st == st[::-1]:
         return True
