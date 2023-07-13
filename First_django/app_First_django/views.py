@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def index(reqest):
-    return HttpResponse('Success')
+    return render(reqest, 'index.html')
+
+def top(reqest):
+    return render(reqest, 'top-sellers.html')
 
 
