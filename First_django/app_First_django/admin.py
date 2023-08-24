@@ -1,14 +1,17 @@
 from django.contrib import admin
 from .models import Advert
 
-# настройки отображение в панели админ
+
+# настройки отображения в панели админ
+
+
 class ArvertAdmin(admin.ModelAdmin):
-    list_display = ['id','title','description','price','auction','created_date', 'update_at']
+    list_display = ['id','title','description','price','auction','created_date', 'update_at', 'user','get_image']
     list_filter = ['price','auction','create_at']
     actions = ['make_auction_as_true',"make_auction_as_false"]
     fieldsets = (
         ('Общие', {
-            'fields':('title','description')
+            'fields':('title','description', 'user','image')
         }),
         ('Финансы',{
             'fields':('price','auction'),
